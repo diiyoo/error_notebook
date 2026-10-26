@@ -1,0 +1,105 @@
+/* ========== 设计 Token · 错题训练 ========== */
+:root {
+  /* 底色与卡片 */
+  --bg: #FAF9F6;
+  --card: #FFFFFF;
+  --card-sub: #FAFAF9;
+  --card-sunken: #F5F5F4;
+  --bg-deep: #F3F1EC;
+
+  /* 主色 · 深青 */
+  --primary: #0F766E;
+  --primary-deep: #115E59;
+  --primary-soft: #F0FDF9;
+  --primary-border: #CCFBF1;
+
+  /* 文字 */
+  --text-1: #1C1917;
+  --text-2: #57534E;
+  --text-3: #78716C;
+  --text-4: #A8A29E;
+
+  /* 边框 */
+  --line: #E7E5E4;
+  --line-soft: #EFEEEC;
+
+  /* 科目色 */
+  --subj-math: #0F766E;
+  --subj-phys: #4D7C0F;
+  --subj-en: #B45309;
+  --subj-chem: #1D4ED8;
+  --subj-other: #7C3AED;
+  --subj-math-soft: #F0FDF9;
+  --subj-phys-soft: #F7FEE7;
+  --subj-en-soft: #FEF3C7;
+  --subj-chem-soft: #EFF6FF;
+  --subj-other-soft: #F5F3FF;
+
+  /* 状态 */
+  --ok: #15803D;
+  --ok-soft: #F0FDF4;
+  --warn: #B45309;
+  --warn-soft: #FFFBEB;
+  --warn-border: #FDE68A;
+  --danger: #DC2626;
+  --danger-soft: #FEF2F2;
+
+  /* 圆角 */
+  --r-card: 18px;
+  --r-inner: 14px;
+  --r-btn: 10px;
+  --r-chip: 999px;
+
+  /* 阴影 */
+  --shadow-card: 0 1px 2px rgba(28, 25, 23, .04), 0 1px 3px rgba(28, 25, 23, .03);
+  --shadow-float: 0 4px 16px rgba(28, 25, 23, .08);
+  --shadow-dlg: 0 24px 64px rgba(28, 25, 23, .18);
+
+  /* 字体 */
+  --font: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-num: "SF Mono", "JetBrains Mono", ui-monospace, monospace;
+
+  /* 布局（各断点覆盖） */
+  --nav-w: 0px;
+  --gutter: 16px;
+  --topbar-h: 52px;
+  --tabbar-h: 0px;
+  --max-content: 100%;
+  --split-left: 100%;
+  --gap: 14px;
+  --fs-body: 15px;
+  --fs-title: 20px;
+  --fs-h2: 16px;
+  --fs-sm: 12.5px;
+}
+
+/* 平板：768–1199 */
+@media (min-width: 768px) {
+  :root {
+    --nav-w: 84px;
+    --gutter: 24px;
+    --topbar-h: 56px;
+    --tabbar-h: 0px;
+    --split-left: 340px;
+    --gap: 18px;
+    --fs-body: 15px;
+    --fs-title: 22px;
+    --fs-h2: 16.5px;
+    --r-card: 18px;
+  }
+}
+
+/* 桌面：≥1200 */
+@media (min-width: 1200px) {
+  :root {
+    --nav-w: 232px;
+    --gutter: 32px;
+    --topbar-h: 64px;
+    --split-left: 420px;
+    --gap: 22px;
+    --fs-body: 14.5px;
+    --fs-title: 24px;
+    --fs-h2: 17px;
+    --max-content: 1320px;
+  }
+}

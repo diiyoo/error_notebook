@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+desktop.ini
+
+*.log
+node_modules/
+.vscode/
+.idea/
+
+# 本地调试与验证脚本，不进仓库
+verify*.js
+shot-*.js
+shots/

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FAF9F6">
+<meta name="description" content="拍题收集错题，AI 分步解析，一键生成可打印的练习试卷。手机、平板、电脑同一套数据。">
+<title>错题训练 · 拍题 · AI 解析 · 生成试卷</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230F766E'/><path d='M16 6l2.2 7.8L26 16l-7.8 2.2L16 26l-2.2-7.8L6 16l7.8-2.2z' fill='white'/></svg>">
+<link rel="stylesheet" href="css/tokens.css?v=20261023b">
+<link rel="stylesheet" href="css/app.css?v=20261023b">
+<script src="https://cdn.jsdelivr.net/npm/@tencent-ai/workbuddy-cloud-sdk@dev/lib/index.global.js"></script>
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- ============ 侧边栏：桌面完整 / 平板 icon rail / 手机隐藏 ============ -->
+  <aside class="sidebar">
+    <div class="sb-brand">
+      <div class="sb-mark">
+        <svg width="19" height="19" viewBox="0 0 18 18" fill="none"><path d="M9 1L10.8 7.2L17 9L10.8 10.8L9 17L7.2 10.8L1 9L7.2 7.2L9 1Z" fill="#fff"/></svg>
+      </div>
+      <div class="sb-text">
+        <div class="sb-name">错题训练</div>
+        <div class="sb-sub">拍题 · 解析 · 组卷</div>
+      </div>
+    </div>
+
+    <nav class="sb-nav" id="sb-nav"><!-- 由 app.js 渲染 --></nav>
+
+    <div class="sb-foot">
+      <button class="sb-user" id="sb-user" type="button">
+        <span class="sb-avatar" id="sb-avatar">丁</span>
+        <span class="sb-user-text">
+          <span class="sb-user-name" id="sb-user-name">本地模式</span>
+          <span class="sb-user-sub" id="sb-user-sub">未登录 · 数据存本机</span>
+        </span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ============ 主区 ============ -->
+  <div class="main-wrap">
+    <header class="topbar">
+      <div class="tb-mobile-mark">
+        <div class="sb-mark" style="width:28px;height:28px;border-radius:8px">
+          <svg width="15" height="15" viewBox="0 0 18 18" fill="none"><path d="M9 1L10.8 7.2L17 9L10.8 10.8L9 17L7.2 10.8L1 9L7.2 7.2L9 1Z" fill="#fff"/></svg>
+        </div>
+      </div>
+      <div class="tb-title" id="tb-title">首页</div>
+      <div class="tb-spacer"></div>
+      <div class="tb-actions">
+        <span class="chip" id="sync-chip" style="pointer-events:none">本机存储</span>
+        <button class="btn btn-primary btn-sm" id="auth-btn" type="button">登录</button>
+      </div>
+    </header>
+
+    <main class="view" id="view">
+      <div class="view-inner" id="view-inner"></div>
+    </main>
+  </div>
+</div>
+
+<!-- ============ 底部 tab：仅手机 ============ -->
+<nav class="tabbar" id="tabbar"><!-- 由 app.js 渲染 --></nav>
+
+<!-- ============ 手机端「拍题」直接调相机的承接入口 ============
+     必须挂在用户点击的同步手势里才被浏览器允许，所以放在文档层，
+     不依赖拍题页是否已渲染。 -->
+<input type="file" id="cam-input" accept="image/*" capture="environment" hidden>
+
+<!-- ============ 弹层容器 ============ -->
+<div class="dlg-mask" id="dlg-mask" hidden></div>
+
+<!-- ============ Toast ============ -->
+<div class="toast-wrap" id="toast-wrap"></div>
+
+<script src="js/config.js?v=20261023b"></script>
+<script src="js/cloud.js?v=20261023b"></script>
+<script src="js/icons.js?v=20261023b"></script>
+<script src="js/db.js?v=20261023b"></script>
+<script src="js/store.js?v=20261023b"></script>
+<script src="js/ui.js?v=20261023b"></script>
+<script src="js/router.js?v=20261023b"></script>
+<script src="js/views/home.js?v=20261023b"></script>
+<script src="js/views/capture.js?v=20261023b"></script>
+<script src="js/views/books.js?v=20261023b"></script>
+<script src="js/views/review.js?v=20261023b"></script>
+<script src="js/views/papers.js?v=20261023b"></script>
+<script src="js/views/settings.js?v=20261023b"></script>
+<script src="js/app.js?v=20261023b"></script>
+</body>
+</html>
