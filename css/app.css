@@ -39,6 +39,26 @@ svg { display: block; flex: none; }
   display: grid;
   grid-template-columns: var(--nav-w) minmax(0, 1fr);
 }
+
+/* GitHub Pages 预览黄条（仅 github.io 域名显示）
+   出现时把 body 改成纵向 flex，.app-shell 自动吃掉剩余高度，
+   不用 JS 量高度，也不影响正式部署（那条 class 不会加）。 */
+.gh-banner {
+  flex: none;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  gap: 2px 6px; padding: 8px 14px;
+  padding-top: calc(8px + env(safe-area-inset-top, 0px));
+  font-size: 13px; line-height: 1.5; text-align: center;
+  background: #FEF3C7; color: #92400E;
+  border-bottom: 1px solid #FCD34D;
+}
+.gh-banner a {
+  color: #92400E; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px;
+  word-break: break-all;
+}
+body.has-gh-banner { display: flex; flex-direction: column; height: 100dvh; }
+body.has-gh-banner .app-shell { flex: 1; height: auto; min-height: 0; }
 .main-wrap {
   display: flex;
   flex-direction: column;
@@ -895,6 +915,8 @@ select.input { appearance: none; background-image: url("data:image/svg+xml,%3Csv
   @page { size: A4; margin: 14mm 12mm; }
   html, body { height: auto !important; background: #fff !important; }
   .sidebar, .topbar, .tabbar, .no-print, .toast-wrap, .dlg-mask { display: none !important; }
+  body.has-gh-banner { display: block !important; }
+  .gh-banner { display: none !important; }
   .app-shell, .main-wrap, .view, .view-inner { display: block !important; height: auto !important; overflow: visible !important; padding: 0 !important; max-width: none !important; }
   .paper-wrap { max-width: none; }
   .paper-sheet { box-shadow: none; border-radius: 0; padding: 0; width: 100%; }

@@ -7,11 +7,29 @@
 <meta name="description" content="拍题收集错题，AI 分步解析，一键生成可打印的练习试卷。手机、平板、电脑同一套数据。">
 <title>错题训练 · 拍题 · AI 解析 · 生成试卷</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230F766E'/><path d='M16 6l2.2 7.8L26 16l-7.8 2.2L16 26l-2.2-7.8L6 16l7.8-2.2z' fill='white'/></svg>">
-<link rel="stylesheet" href="css/tokens.css?v=20261023b">
-<link rel="stylesheet" href="css/app.css?v=20261023b">
+<link rel="stylesheet" href="css/tokens.css?v=20261026">
+<link rel="stylesheet" href="css/app.css?v=20261026">
 <script src="https://cdn.jsdelivr.net/npm/@tencent-ai/workbuddy-cloud-sdk@dev/lib/index.global.js"></script>
 </head>
 <body>
+
+<!-- ============ GitHub Pages 预览提示条 ============
+     只在 *.github.io 域名下显示；正式部署（workbuddy 托管域名）不显示。
+     原因：后端按 Origin 精确校验，github.io 上登录 / 同步 / AI 都调不通，
+     页面只能跑本机模式，不解释清楚容易被当成 app 坏了。 -->
+<div class="gh-banner" id="gh-banner" hidden>
+  <span>这是源码预览，登录 / 同步 / AI 解析在此不可用。正式版请访问</span>
+  <a href="https://cuotiji-86791.app.workbuddy.host/?sharecode=G35E4ZUJMX">cuotiji-86791.app.workbuddy.host</a>
+</div>
+<script>
+  (function () {
+    if (!/(^|\.)github\.io$/i.test(location.hostname)) return;
+    var b = document.getElementById('gh-banner');
+    if (!b) return;
+    b.hidden = false;
+    document.body.classList.add('has-gh-banner');
+  })();
+</script>
 
 <div class="app-shell">
 
@@ -76,19 +94,19 @@
 <!-- ============ Toast ============ -->
 <div class="toast-wrap" id="toast-wrap"></div>
 
-<script src="js/config.js?v=20261023b"></script>
-<script src="js/cloud.js?v=20261023b"></script>
-<script src="js/icons.js?v=20261023b"></script>
-<script src="js/db.js?v=20261023b"></script>
-<script src="js/store.js?v=20261023b"></script>
-<script src="js/ui.js?v=20261023b"></script>
-<script src="js/router.js?v=20261023b"></script>
-<script src="js/views/home.js?v=20261023b"></script>
-<script src="js/views/capture.js?v=20261023b"></script>
-<script src="js/views/books.js?v=20261023b"></script>
-<script src="js/views/review.js?v=20261023b"></script>
-<script src="js/views/papers.js?v=20261023b"></script>
-<script src="js/views/settings.js?v=20261023b"></script>
-<script src="js/app.js?v=20261023b"></script>
+<script src="js/config.js?v=20261026"></script>
+<script src="js/cloud.js?v=20261026"></script>
+<script src="js/icons.js?v=20261026"></script>
+<script src="js/db.js?v=20261026"></script>
+<script src="js/store.js?v=20261026"></script>
+<script src="js/ui.js?v=20261026"></script>
+<script src="js/router.js?v=20261026"></script>
+<script src="js/views/home.js?v=20261026"></script>
+<script src="js/views/capture.js?v=20261026"></script>
+<script src="js/views/books.js?v=20261026"></script>
+<script src="js/views/review.js?v=20261026"></script>
+<script src="js/views/papers.js?v=20261026"></script>
+<script src="js/views/settings.js?v=20261026"></script>
+<script src="js/app.js?v=20261026"></script>
 </body>
 </html>
