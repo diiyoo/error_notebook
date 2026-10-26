@@ -20,8 +20,12 @@
 
 ## 在线使用
 
-- GitHub Pages：`https://diiyoo.github.io/error_notebook/`（开启 Pages 后生效）
-- 需要登录后才有云端数据；不登录则是纯本机模式，数据只在自己浏览器里
+| 入口 | 能用到什么 |
+|---|---|
+| WorkBuddy 托管版（作者自用实例） | **完整**：登录、多端同步、AI 解析、组卷、打印 |
+| GitHub Pages `https://diiyoo.github.io/error_notebook/` | **只能本机模式**：界面可正常浏览，数据存浏览器 IndexedDB；登录、同步、AI 解析不可用 |
+
+为什么 Pages 版不全：托管后端按**精确 Origin** 校验，只放行应用自己的域名。从 `diiyoo.github.io` 发起的请求会被 403 拦掉（OPTIONS 预检返回 403，无 `Access-Control-Allow-Origin`）。这是后端策略，不是前端 bug。想让 Pages 版真正可用，得在能跑服务端转发的地方做同源代理（如 Cloudflare Pages Functions、自建 Nginx）。
 
 ## 本地跑起来
 
@@ -81,4 +85,12 @@ js/app.js           启动、导航渲染、文件自检
 
 ## License
 
-家用项目，未选定开源协议。要商用或分发请先联系作者。
+**PolyForm Noncommercial License 1.0.0** — 仅限非商业用途，全文见 [LICENSE](LICENSE)。
+
+| | |
+|---|---|
+| ✅ 可以 | 自己用、家里用、随便改、送给别人一起用、教学 / 研究 / 公益组织使用 |
+| ❌ 不可以 | 任何商业用途：拿去卖、打包进付费产品、装到公司业务系统里 |
+
+选它而不是 MIT / CC BY-NC 的原因：PolyForm 是**专为软件写的**非商业协议，带专利授权、明确"个人使用 / 爱好项目"属于允许用途；CC 系列官方不推荐用于代码。
+
