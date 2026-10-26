@@ -27,6 +27,8 @@
 
 为什么 Pages 版不全：托管后端按**精确 Origin** 校验，只放行应用自己的域名。从 `diiyoo.github.io` 发起的请求会被 403 拦掉（OPTIONS 预检返回 403，无 `Access-Control-Allow-Origin`）。这是后端策略，不是前端 bug。想让 Pages 版真正可用，得在能跑服务端转发的地方做同源代理（如 Cloudflare Pages Functions、自建 Nginx）。
 
+也因为这样，页面在 `*.github.io` 下会自动顶出一条黄色提示条（写明正式版地址），正常部署的域名下不显示——代码是同一份，按 `location.hostname` 判断，没有分叉。
+
 ## 本地跑起来
 
 纯静态，零构建、零依赖。**不能用 `file://` 直接双击打开**（IndexedDB 与模块作用域会受限），起一个静态服务即可：
